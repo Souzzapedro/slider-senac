@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+</head>
+
+<body>
+    <div class="content">
+        <div class="slides">
+            <input type="radio" name="radio" id="slide-1" checked>
+            <input type="radio" name="radio" id="slide-2">
+            <input type="radio" name="radio" id="slide-3">
+            <input type="radio" name="radio" id="slide-4">
+            <input type="radio" name="radio" id="slide-5">
+
+            <div class="slide s1">
+                <img src="../images/1.jpg" alt="1">
+            </div>
+            <div class="slide s2">
+                <img src="../images/2.jpg" alt="2">
+            </div>
+            <div class="slide s3">
+                <img src="../images/3.jpg" alt="3">
+            </div>
+            <div class="slide s4">
+                <img src="../images/4.jpg" alt="4">
+            </div>
+            <div class="slide s5">
+                <img src="../images/5.jpg" alt="5">
+            </div>
+        </div>
+
+        <div class="navigation">
+            <label class="bar" for="slide-1" onclick="emitirSom()"></label>
+            <label class="bar" for="slide-2" onclick="emitirSom()"></label>
+            <label class="bar" for="slide-3" onclick="emitirSom()"></label>
+            <label class="bar" for="slide-4" onclick="emitirSom()"></label>
+            <label class="bar" for="slide-5" onclick="emitirSom()"></label>
+        </div>
+    </div>
+
+
+    <audio id="audio" src="../song/Woosh Effect 6.wav"></audio>
+    <script>
+        // Função para emitir o som quando o botão for clicado
+        function emitirSom() {
+            var audio = document.getElementById('audio');
+
+            // Verifica se o áudio já está sendo reproduzido
+            if (!audio.paused) {
+                // Clona o elemento de áudio e reproduz o som
+                var novoAudio = audio.cloneNode();
+                novoAudio.play();
+            } else {
+                // Reproduz o áudio normalmente
+                audio.play();
+            }
+        }
+    </script>
+</body>
+
+</html>
